@@ -12,9 +12,9 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MIT</project_license>
   <developer id="com.lunday">
-    <name>Community</name>
+    <name>ulitus</name>
   </developer>
-  <url type="homepage">https://monday.com/</url>
+  <url type="homepage">https://github.com/ulitus/lunday</url>
   <categories>
     <category>Office</category>
     <category>ProjectManagement</category>
@@ -22,8 +22,18 @@
   <provides>
     <binary>lunday</binary>
   </provides>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/ulitus/lunday/main/assets/screenshot.png</image>
+      <caption>Lunday main window showing the Monday.com workspace</caption>
+    </screenshot>
+  </screenshots>
   <releases>
-    <release version="1.0.0" date="2026-04-30" />
+    <release version="1.0.0" date="2026-04-30">
+      <description>
+        <p>Initial release of Lunday.</p>
+      </description>
+    </release>
   </releases>
   <content_rating type="oars-1.1" />
 </component>
