@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.lunday.Lunday</id>
+  <name>Lunday</name>
+  <summary>Unofficial Monday.com desktop client for Linux</summary>
+  <description>
+    <p>
+      Lunday is an unofficial Linux desktop wrapper for monday.com using GTK and WebKit.
+    </p>
+  </description>
+  <launchable type="desktop-id">com.lunday.Lunday.desktop</launchable>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <developer id="com.lunday">
+    <name>Community</name>
+  </developer>
+  <url type="homepage">https://monday.com/</url>
+  <categories>
+    <category>Office</category>
+    <category>ProjectManagement</category>
+  </categories>
+  <provides>
+    <binary>lunday</binary>
+  </provides>
+  <releases>
+    <release version="1.0.0" date="2026-04-30" />
+  </releases>
+  <content_rating type="oars-1.1" />
+</component>

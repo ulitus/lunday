@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Lunday
+Comment=Monday.com desktop app
+Exec=lunday
+Icon=com.lunday.Lunday
+Terminal=false
+Categories=Office;ProjectManagement;
+StartupNotify=true

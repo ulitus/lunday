@@ -1,0 +1,9 @@
+# Flatpak build artifacts
+build-dir/
+.flatpak-builder/
+
+# Local Flatpak repo (rebuilt by CI; not committed to main branch)
+repo/
+
+# Bundle output (regenerated on each build)
+*.flatpak

@@ -1,0 +1,36 @@
+app-id: com.lunday.Lunday
+runtime: org.gnome.Platform
+runtime-version: '50'
+sdk: org.gnome.Sdk
+command: lunday
+finish-args:
+  - --share=network
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --socket=pulseaudio
+  - --device=dri
+  - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.freedesktop.portal.Desktop
+  - --talk-name=org.freedesktop.secrets
+  - --filesystem=xdg-download:rw
+  - --filesystem=home:ro
+modules:
+  - name: monday
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 lunday.py /app/bin/lunday
+      - install -Dm644 com.lunday.Lunday.desktop /app/share/applications/com.lunday.Lunday.desktop
+      - install -Dm644 com.lunday.Lunday.metainfo.xml /app/share/metainfo/com.lunday.Lunday.metainfo.xml
+      - install -Dm644 com.lunday.Lunday.svg /app/share/icons/hicolor/scalable/apps/com.lunday.Lunday.svg
+      - install -Dm644 notify.wav /app/share/sounds/notify.wav
+    sources:
+      - type: file
+        path: assets/lunday.py
+      - type: file
+        path: assets/com.lunday.Lunday.desktop
+      - type: file
+        path: assets/com.lunday.Lunday.metainfo.xml
+      - type: file
+        path: assets/com.lunday.Lunday.svg
+      - type: file
+        path: assets/notify.wav
