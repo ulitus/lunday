@@ -1,0 +1,62 @@
+name: Build and Deploy Flatpak
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/flathub/flatpak-builder:latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install GNOME runtime
+        run: |
+          flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+          flatpak install -y flathub org.gnome.Platform//50 org.gnome.Sdk//50
+
+      - name: Build Flatpak
+        run: |
+          flatpak-builder --force-clean --repo=repo build-dir com.lunday.Lunday.yml
+          flatpak build-bundle repo com.lunday.Lunday.flatpak com.lunday.Lunday
+
+      - name: Upload .flatpak bundle as release artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: com.lunday.Lunday.flatpak
+          path: com.lunday.Lunday.flatpak
+
+      - name: Prepare GitHub Pages (Flatpak remote)
+        run: |
+          # Keep only the repo/ OSTree directory for Pages deployment
+          cp -r repo /tmp/flatpak-repo
+          # Add a simple index page so browsers don't get 404
+          cat > /tmp/flatpak-repo/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head><meta charset="UTF-8"><title>Lunday Flatpak Repository</title></head>
+          <body>
+            <h1>Lunday Flatpak Repository</h1>
+            <p>Add this remote to get automatic updates:</p>
+            <pre>flatpak remote-add --if-not-exists lunday https://ulitus.github.io/lunday/
+          flatpak install lunday com.lunday.Lunday</pre>
+          </body>
+          </html>
+          EOF
+
+      - name: Deploy OSTree repo to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: /tmp/flatpak-repo
+          force_orphan: true
