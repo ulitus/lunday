@@ -573,43 +573,40 @@ class LundayApplication(Gtk.Application):
         self._save_preferences()
 
     def _on_sign_out(self, action, param):
+        # Clear saved credentials from keyring
+        try:
+            Secret.password_clear_sync(SECRET_SCHEMA, SECRET_ATTRS, None)
+        except Exception as exc:
+            print(f'[sign-out] keyring clear error: {exc}', file=sys.stderr)
+        self._credentials = None
+        self._last_workspace_url = None
+        self._save_preferences()
+
         if self._session is not None:
+            data_manager = self._session.get_website_data_manager()
+            if data_manager is not None:
+                # Clear ALL WebKit-stored data: cookies, cache, localStorage,
+                # IndexedDB, service workers, etc. — then navigate to login.
+                data_manager.clear(
+                    WebKit.WebsiteDataTypes.ALL,
+                    0,
+                    None,
+                    self._on_sign_out_data_cleared,
+                )
+                return
+            # Fallback: cookie-only clear
             self._session.get_cookie_manager().delete_all_cookies()
 
-        Secret.password_clear_sync(SECRET_SCHEMA, SECRET_ATTRS, None)
-        self._credentials = None
-
         if self._webview is not None:
-            clear_storage_js = """
-            (function() {
-                try { localStorage.clear(); } catch (e) {}
-                try { sessionStorage.clear(); } catch (e) {}
-                try {
-                    if (window.indexedDB && indexedDB.databases) {
-                        indexedDB.databases().then((dbs) => {
-                            for (const db of dbs) {
-                                if (db && db.name) {
-                                    indexedDB.deleteDatabase(db.name);
-                                }
-                            }
-                        });
-                    }
-                } catch (e) {}
-            })();
-            """
-            self._webview.evaluate_javascript(
-                clear_storage_js,
-                -1,
-                None,
-                None,
-                None,
-                None,
-                None,
-            )
-            self._webview.load_uri(LOGOUT_URL)
+            self._webview.load_uri(START_URL)
 
-            self._last_workspace_url = None
-            self._save_preferences()
+    def _on_sign_out_data_cleared(self, data_manager, result):
+        try:
+            data_manager.clear_finish(result)
+        except Exception as exc:
+            print(f'[sign-out] website data clear error: {exc}', file=sys.stderr)
+        if self._webview is not None:
+            self._webview.load_uri(START_URL)
 
     def _on_about(self, action, param):
         if self._about_window is not None:
