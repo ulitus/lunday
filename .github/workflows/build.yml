@@ -30,20 +30,18 @@ jobs:
 
       - name: Build Flatpak
         run: |
-          flatpak-builder --user --force-clean --repo=repo build-dir com.lunday.Lunday.yml
-          flatpak build-bundle repo com.lunday.Lunday.flatpak com.lunday.Lunday
+          flatpak-builder --user --force-clean --repo=repo build-dir io.github.ulitus.Lunday.yml
+          flatpak build-bundle repo io.github.ulitus.Lunday.flatpak io.github.ulitus.Lunday
 
       - name: Upload .flatpak bundle as release artifact
         uses: actions/upload-artifact@v4
         with:
-          name: com.lunday.Lunday.flatpak
-          path: com.lunday.Lunday.flatpak
+          name: io.github.ulitus.Lunday.flatpak
+          path: io.github.ulitus.Lunday.flatpak
 
       - name: Prepare GitHub Pages (Flatpak remote)
         run: |
-          # Keep only the repo/ OSTree directory for Pages deployment
           cp -r repo /tmp/flatpak-repo
-          # Add a simple index page so browsers don't get 404
           cat > /tmp/flatpak-repo/index.html << 'EOF'
           <!DOCTYPE html>
           <html lang="en">
@@ -52,7 +50,7 @@ jobs:
             <h1>Lunday Flatpak Repository</h1>
             <p>Add this remote to get automatic updates:</p>
             <pre>flatpak remote-add --if-not-exists lunday https://ulitus.github.io/lunday/
-          flatpak install lunday com.lunday.Lunday</pre>
+          flatpak install lunday io.github.ulitus.Lunday</pre>
           </body>
           </html>
           EOF
