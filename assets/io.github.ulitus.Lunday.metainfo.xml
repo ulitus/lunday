@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>com.lunday.Lunday</id>
+  <id>io.github.ulitus.Lunday</id>
   <name>Lunday</name>
   <summary>Unofficial Monday.com desktop client for Linux</summary>
   <description>
@@ -8,7 +8,7 @@
       Lunday is an unofficial Linux desktop wrapper for monday.com using GTK and WebKit.
     </p>
   </description>
-  <launchable type="desktop-id">com.lunday.Lunday.desktop</launchable>
+  <launchable type="desktop-id">io.github.ulitus.Lunday.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MIT</project_license>
   <developer id="com.lunday">
