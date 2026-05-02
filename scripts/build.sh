@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-APP_ID="com.lunday.Lunday"
-MANIFEST="com.lunday.Lunday.yml"
+APP_ID="io.github.ulitus.Lunday"
+MANIFEST="io.github.ulitus.Lunday.yml"
 BUILD_DIR="build-dir"
 REPO_DIR="repo"
 
