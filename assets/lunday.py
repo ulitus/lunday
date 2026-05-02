@@ -338,8 +338,8 @@ NOTIFICATION_BRIDGE_JS = """
 
 
 class LundayApplication(Gtk.Application):
-    def __init__(self):
-        super().__init__(application_id=APP_ID, flags=Gio.ApplicationFlags.FLAGS_NONE)
+    def __init__(self, flags=Gio.ApplicationFlags.FLAGS_NONE):
+        super().__init__(application_id=APP_ID, flags=flags)
         self._credentials = None
         self._webview = None
         self._session = None
@@ -1288,4 +1288,13 @@ class LundayApplication(Gtk.Application):
 
 if __name__ == '__main__':
     app = LundayApplication()
-    app.run(None)
+    exit_code = app.run(None)
+
+    # Some sessions may not expose the expected DBus services for unique-app
+    # registration. Retry in NON_UNIQUE mode so the window can still open.
+    if exit_code != 0:
+        print('[startup] Retrying in NON_UNIQUE mode', file=sys.stderr)
+        fallback_app = LundayApplication(flags=Gio.ApplicationFlags.NON_UNIQUE)
+        exit_code = fallback_app.run(None)
+
+    sys.exit(exit_code)
