@@ -1,24 +1,13 @@
-<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bgGradient" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1f1f2e"/>
-      <stop offset="100%" stop-color="#2d2d44"/>
-    </linearGradient>
-  </defs>
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="20" y="20" width="216" height="216" rx="50" fill="#F5F5F5" stroke-width="8"/>
+  
+  <rect x="75" y="65" width="24" height="45" rx="6" fill="#FF3D57"/>
+  
+  <rect x="75" y="115" width="24" height="45" rx="6" fill="#FFCB00"/>
+  
+  <rect x="75" y="165" width="24" height="24" rx="6" fill="#00C875"/>
+  
+  <rect x="105" y="165" width="75" height="24" rx="6" fill="#0085FF"/>
 
-  <!-- Background -->
-  <rect x="0" y="0" width="256" height="256" rx="48" fill="url(#bgGradient)" />
-
-  <!-- Colored bars (task lines) -->
-  <rect x="60" y="70" width="140" height="20" rx="10" fill="#ff5c5c"/>
-  <rect x="60" y="110" width="100" height="20" rx="10" fill="#ffb84d"/>
-  <rect x="60" y="150" width="120" height="20" rx="10" fill="#4dd2ff"/>
-
-  <!-- Left dots (status indicators) -->
-  <circle cx="40" cy="80" r="8" fill="#ff5c5c"/>
-  <circle cx="40" cy="120" r="8" fill="#ffb84d"/>
-  <circle cx="40" cy="160" r="8" fill="#4dd2ff"/>
-
-  <!-- Subtle "L" mark -->
-  <path d="M80 190 L80 60 L95 60 L95 175 L160 175 L160 190 Z" fill="#ffffff" opacity="0.08"/>
+  <path d="M190 70L200 80L190 90" stroke="#212121" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.5"/>
 </svg>
