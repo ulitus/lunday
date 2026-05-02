@@ -17,7 +17,7 @@ from gi.repository import Gdk, Gio, GLib, Gtk, WebKit, Secret, Gst
 Gst.init(None)
 
 APP_ID = 'io.github.ulitus.Lunday'
-APP_VERSION = '1.0.0'
+APP_VERSION = '1.0.1'
 START_URL = 'https://auth.monday.com/login'
 LOGOUT_URL = 'https://auth.monday.com/logout'
 

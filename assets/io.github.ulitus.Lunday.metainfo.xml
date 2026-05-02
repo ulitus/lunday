@@ -30,11 +30,16 @@
     <screenshot>
       <caption>Lunday walkthrough video</caption>
       <video codec="vp9" container="webm">
-        <url type="source">https://raw.githubusercontent.com/ulitus/lunday/8a9c0649982d0c570f2382883bcb1318e0f9e483/assets/lunday-preview.webm</url>
+        <url type="source">https://raw.githubusercontent.com/ulitus/lunday/main/assets/lunday-preview.webm</url>
       </video>
     </screenshot>
   </screenshots>
   <releases>
+    <release version="1.0.1" date="2026-05-02">
+      <description>
+        <p>Minor update and improvements.</p>
+      </description>
+    </release>
     <release version="1.0.0" date="2026-04-30">
       <description>
         <p>Initial release of Lunday.</p>
