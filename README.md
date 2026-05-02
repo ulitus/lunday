@@ -13,7 +13,7 @@ curl -s https://raw.githubusercontent.com/ulitus/lunday/main/scripts/add-remote.
 To update in the future:
 
 ```bash
-flatpak update com.lunday.Lunday
+flatpak update io.github.ulitus.Lunday
 ```
 
 ## Build from source
@@ -37,7 +37,7 @@ chmod +x scripts/build.sh scripts/install-local.sh
 This creates:
 
 - `repo/` local Flatpak repository
-- `com.lunday.Lunday.flatpak` standalone bundle
+- `io.github.ulitus.Lunday.flatpak` standalone bundle
 
 ### Install locally
 
@@ -48,7 +48,7 @@ This creates:
 ## Run
 
 ```bash
-flatpak run com.lunday.Lunday
+flatpak run io.github.ulitus.Lunday
 ```
 
 ## Notes

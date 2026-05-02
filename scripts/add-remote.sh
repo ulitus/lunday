@@ -2,13 +2,13 @@
 # ─────────────────────────────────────────────────────────────────
 # Lunday — add Flatpak remote and install
 # Run this once to set up Lunday and get automatic updates via:
-#   flatpak update com.lunday.Lunday
+#   flatpak update io.github.ulitus.Lunday
 # ─────────────────────────────────────────────────────────────────
 set -euo pipefail
 
 REMOTE_NAME="lunday"
 REMOTE_URL="https://ulitus.github.io/lunday/"
-APP_ID="com.lunday.Lunday"
+APP_ID="io.github.ulitus.Lunday"
 
 echo "Adding Lunday Flatpak remote…"
 flatpak remote-add --user --if-not-exists --no-gpg-verify \
