@@ -24,8 +24,14 @@
   </provides>
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/ulitus/lunday/main/assets/screenshot.png</image>
+      <image type="source" width="4094" height="2538">https://raw.githubusercontent.com/ulitus/lunday/main/assets/screenshot.png</image>
       <caption>Lunday main window showing the Monday.com workspace</caption>
+    </screenshot>
+    <screenshot>
+      <caption>Lunday walkthrough video</caption>
+      <video codec="vp9" container="webm">
+        <url type="source">https://raw.githubusercontent.com/ulitus/lunday/main/assets/lunday-preview.webm</url>
+      </video>
     </screenshot>
   </screenshots>
   <releases>
