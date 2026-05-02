@@ -24,12 +24,17 @@ modules:
       - install -Dm644 notify.wav /app/share/sounds/notify.wav
     sources:
       - type: file
-        path: assets/lunday.py
+        url: https://raw.githubusercontent.com/ulitus/lunday/7245af2c51c891f09f25b512f831a75211404a97/assets/lunday.py
+        sha256: 10e8a24f3db57fd6846db73caa3414a02159f209befa02051272a49d9ea651b7
       - type: file
-        path: assets/io.github.ulitus.Lunday.desktop
+        url: https://raw.githubusercontent.com/ulitus/lunday/7245af2c51c891f09f25b512f831a75211404a97/assets/io.github.ulitus.Lunday.desktop
+        sha256: 839eb2e8f1a08c7e0de61b71c9129d8fb186062e0f401d588278b7f121e10737
       - type: file
-        path: assets/io.github.ulitus.Lunday.metainfo.xml
+        url: https://raw.githubusercontent.com/ulitus/lunday/7245af2c51c891f09f25b512f831a75211404a97/assets/io.github.ulitus.Lunday.metainfo.xml
+        sha256: 088db5de04a58614b067b1fceb4e8e44b000d36943acf2963d4c24ff360ea8f9
       - type: file
-        path: assets/io.github.ulitus.Lunday.svg
+        url: https://raw.githubusercontent.com/ulitus/lunday/7245af2c51c891f09f25b512f831a75211404a97/assets/io.github.ulitus.Lunday.svg
+        sha256: d71eb56308c3b951c70c1a1700e0fa3178bf50c7ff8e2818df658390d8656212
       - type: file
-        path: assets/notify.wav
+        url: https://raw.githubusercontent.com/ulitus/lunday/7245af2c51c891f09f25b512f831a75211404a97/assets/notify.wav
+        sha256: 551c9e9a322d29efb24582b7465d8c5605338bd263d5c84eb93c148cf0648d48
