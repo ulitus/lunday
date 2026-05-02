@@ -30,7 +30,7 @@
     <screenshot>
       <caption>Lunday walkthrough video</caption>
       <video codec="vp9" container="webm">
-        <url type="source">https://raw.githubusercontent.com/ulitus/lunday/main/assets/lunday-preview.webm</url>
+        <url type="source">https://raw.githubusercontent.com/ulitus/lunday/8a9c0649982d0c570f2382883bcb1318e0f9e483/assets/lunday-preview.webm</url>
       </video>
     </screenshot>
   </screenshots>
