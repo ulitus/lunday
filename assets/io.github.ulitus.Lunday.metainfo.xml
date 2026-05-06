@@ -5,8 +5,22 @@
   <summary>Unofficial Monday.com desktop client for Linux</summary>
   <description>
     <p>
-      Lunday is an unofficial Linux desktop wrapper for monday.com using GTK and WebKit.
+      **This is a community package of Lunday and is not officially supported by monday.com.**
     </p>
+    <p>
+      Lunday is an unofficial Linux desktop client for monday.com built with GTK and WebKit.
+    </p>
+    <p>
+      It adds desktop-focused integration on top of the web app, including secure credential storage,
+      native notifications, persistent preferences, theme and zoom controls, and a configurable
+      notification sound.
+    </p>
+    <ul>
+      <li>Stores login credentials securely with Secret Service integration.</li>
+      <li>Bridges web notifications to native desktop notifications.</li>
+      <li>Remembers navigation state, theme preference, zoom level, and other app settings.</li>
+      <li>Lets you choose and preview a custom notification sound from a file picker.</li>
+    </ul>
   </description>
   <launchable type="desktop-id">io.github.ulitus.Lunday.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
@@ -15,6 +29,8 @@
     <name>ulitus</name>
   </developer>
   <url type="homepage">https://github.com/ulitus/lunday</url>
+  <url type="bugtracker">https://github.com/ulitus/lunday/issues</url>
+  <url type="vcs-browser">https://github.com/ulitus/lunday</url>
   <categories>
     <category>Office</category>
     <category>ProjectManagement</category>
@@ -36,11 +52,17 @@
   </screenshots>
   <releases>
     <release version="1.0.1" date="2026-05-02">
+      <url type="details">https://github.com/ulitus/lunday/releases/tag/v1.0.1</url>
       <description>
         <p>Minor update and improvements.</p>
+        <ul>
+          <li>Improved overall desktop integration and metadata.</li>
+          <li>Refined the application experience for current Flatpak builds.</li>
+        </ul>
       </description>
     </release>
     <release version="1.0.0" date="2026-04-30">
+      <url type="details">https://github.com/ulitus/lunday/releases/tag/v1.0.0</url>
       <description>
         <p>Initial release of Lunday.</p>
       </description>

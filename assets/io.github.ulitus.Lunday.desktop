@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Lunday
-Comment=Monday.com desktop app
+Comment=Unofficial desktop client for monday.com
 Exec=lunday
 Icon=io.github.ulitus.Lunday
 Terminal=false
