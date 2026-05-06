@@ -2,7 +2,9 @@
 
 An unofficial Monday.com desktop app for Linux, packaged as a Flatpak using GTK4 + WebKit.
 
-## Install (recommended)
+## Install
+
+### Flatpak (recommended)
 
 Add the Lunday Flatpak remote and install in one step:
 
@@ -14,6 +16,35 @@ To update in the future:
 
 ```bash
 flatpak update io.github.ulitus.Lunday
+```
+
+### Debian/Ubuntu
+
+Download the DEB package from the [latest release](https://github.com/ulitus/lunday/releases) and install:
+
+```bash
+sudo dpkg -i lunday_1.0.1_amd64.deb
+```
+
+Or install directly:
+
+```bash
+sudo apt update
+sudo apt install ./lunday_1.0.1_amd64.deb
+```
+
+### Red Hat/Fedora/CentOS
+
+Download the RPM package from the [latest release](https://github.com/ulitus/lunday/releases) and install:
+
+```bash
+sudo rpm -i lunday-1.0.1-1.x86_64.rpm
+```
+
+Or using dnf:
+
+```bash
+sudo dnf install ./lunday-1.0.1-1.x86_64.rpm
 ```
 
 ## Build from source
@@ -43,6 +74,30 @@ This creates:
 
 ```bash
 ./scripts/install-local.sh
+```
+
+### Build DEB and RPM packages
+
+To create distributable DEB and RPM packages:
+
+```bash
+chmod +x scripts/build-packages-fpm.sh
+./scripts/build-packages-fpm.sh ./dist
+```
+
+This creates:
+
+- `dist/lunday_1.0.1_amd64.deb` - Debian/Ubuntu package
+- `dist/lunday-1.0.1-1.x86_64.rpm` - Red Hat/Fedora package
+
+Then install using:
+
+```bash
+# Debian/Ubuntu
+sudo dpkg -i dist/lunday_1.0.1_amd64.deb
+
+# Red Hat/Fedora
+sudo rpm -i dist/lunday-1.0.1-1.x86_64.rpm
 ```
 
 ## Run
