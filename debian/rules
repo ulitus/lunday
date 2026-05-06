@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	mkdir -p debian/lunday/usr/local/bin
+	mkdir -p debian/lunday/usr/local/share/applications
+	mkdir -p debian/lunday/usr/local/share/metainfo
+	mkdir -p debian/lunday/usr/local/share/icons/hicolor/scalable/apps
+	mkdir -p debian/lunday/usr/local/share/sounds
+	
+	install -Dm755 assets/lunday.py debian/lunday/usr/local/bin/lunday
+	install -Dm644 assets/io.github.ulitus.Lunday.desktop debian/lunday/usr/local/share/applications/io.github.ulitus.Lunday.desktop
+	install -Dm644 assets/io.github.ulitus.Lunday.metainfo.xml debian/lunday/usr/local/share/metainfo/io.github.ulitus.Lunday.metainfo.xml
+	install -Dm644 assets/io.github.ulitus.Lunday.svg debian/lunday/usr/local/share/icons/hicolor/scalable/apps/io.github.ulitus.Lunday.svg
+	install -Dm644 assets/notify.wav debian/lunday/usr/local/share/sounds/notify.wav

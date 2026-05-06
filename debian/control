@@ -1,0 +1,17 @@
+Source: lunday
+Section: utils
+Priority: optional
+Maintainer: Ulitus <ulitus@users.noreply.github.com>
+Build-Depends: debhelper-compat (= 13), python3
+Standards-Version: 4.6.1
+Homepage: https://github.com/ulitus/lunday
+Vcs-Browser: https://github.com/ulitus/lunday
+Vcs-Git: https://github.com/ulitus/lunday.git
+
+Package: lunday
+Architecture: all
+Depends: python3, python3-gi, gir1.2-gtk-4.0, gir1.2-webkit2-4.1, gir1.2-secret-1, gir1.2-gstreamer-1.0
+Description: Unofficial Monday.com desktop app for Linux
+ Lunday is an unofficial Monday.com desktop application for Linux,
+ built with GTK4 and WebKit. It provides a native desktop experience
+ for Monday.com project management platform.
